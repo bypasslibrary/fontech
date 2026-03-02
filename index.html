@@ -1,219 +1,223 @@
-!DOCTYPE html
-html lang=ru
-head
-meta charset=UTF-8
-meta name=viewport content=width=device-width, initial-scale=1.0
-titleGrim VPNtitle
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Grim VPN</title>
 
-style
+<style>
 
- ---------- ПОДКЛЮЧЕНИЕ КАСТОМНОГО ШРИФТА ---------- 
+/* ---------- ПОДКЛЮЧЕНИЕ КАСТОМНОГО ШРИФТА ---------- */
 @font-face {
-    font-family 'Srift';
-    src url('sriftSrift-Regular.ttf') format('truetype');
-    font-weight normal;
-    font-style normal;
+    font-family: 'Srift';
+    src: url('srift.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
 }
 
+
 @font-face {
-    font-family 'Srift';
-    src url('sriftSrift-Bold.ttf') format('truetype');
-    font-weight bold;
-    font-style normal;
+    font-family: 'Srift';
+    src: url('srift.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
 }
 
- {
-margin 0;
-padding 0;
-box-sizing border-box;
+
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
 }
 
 html, body {
-height 100%;
-font-family 'Srift', sans-serif;
-color white;
+height: 100%;
+font-family: 'Srift', Arial, sans-serif;
+color: white;
 }
 
- ---------- ФОНОВАЯ КАРТИНКА ---------- 
+/* ---------- ФОНОВАЯ КАРТИНКА ---------- */
 
 body {
-background url(fon.png) no-repeat center center fixed;
-background-size cover;
+background: url("fon.png") no-repeat center center fixed;
+background-size: cover;
 }
 
- затемнение поверх картинки 
-bodybefore {
-content ;
-position fixed;
-top 0;
-left 0;
-width 100%;
-height 100%;
-background rgba(0, 0, 0, 0.55);
-z-index -1;
+/* затемнение поверх картинки */
+body::before {
+content: "";
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background: rgba(0, 0, 0, 0.55);
+z-index: -1;
 }
 
- ---------- ВЕРХНЯЯ ПАНЕЛЬ ---------- 
+/* ---------- ВЕРХНЯЯ ПАНЕЛЬ ---------- */
 
 .top-bar {
-position fixed;
-top 0;
-left 0;
-width 100%;
-height 60px;
-background rgba(0,0,0,0.85);
-backdrop-filter blur(8px);
-display flex;
-align-items center;
-justify-content center;
-gap 60px;
-z-index 10;
-box-shadow 0 2px 20px rgba(0,0,0,0.6);
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+height: 60px;
+background: rgba(0,0,0,0.85);
+backdrop-filter: blur(8px);
+display: flex;
+align-items: center;
+justify-content: center;
+gap: 60px;
+z-index: 10;
+box-shadow: 0 2px 20px rgba(0,0,0,0.6);
 }
 
 .top-bar a {
-color white;
-text-decoration none;
-font-size 16px;
-letter-spacing 1px;
-transition 0.3s;
+color: white;
+text-decoration: none;
+font-size: 16px;
+letter-spacing: 1px;
+transition: 0.3s;
 }
 
-.top-bar ahover {
-color #00c6ff;
+.top-bar a:hover {
+color: #00c6ff;
 }
 
- ---------- ОСНОВНОЙ КОНТЕЙНЕР ---------- 
+/* ---------- ОСНОВНОЙ КОНТЕЙНЕР ---------- */
 
 .main-wrapper {
-position relative;
-z-index 1;
-max-width 1200px;
-margin 120px auto 60px auto;
-padding 20px;
+position: relative;
+z-index: 1;
+max-width: 1200px;
+margin: 120px auto 60px auto;
+padding: 20px;
 }
 
- ---------- ВЕРХНИЙ БЛОК ---------- 
+/* ---------- ВЕРХНИЙ БЛОК ---------- */
 
 .top-section {
-display flex;
-justify-content space-between;
-align-items stretch;
-gap 60px;
-margin-bottom 80px;
+display: flex;
+justify-content: space-between;
+align-items: stretch;
+gap: 60px;
+margin-bottom: 80px;
 }
 
- ЛЕВАЯ ЧАСТЬ 
+/* ЛЕВАЯ ЧАСТЬ */
 
 .left-description {
-flex 1;
-font-size 24px;
-line-height 1.7;
-text-shadow 0 0 20px rgba(0,0,0,0.8);
-display flex;
-align-items center;
+flex: 1;
+font-size: 24px;
+line-height: 1.7;
+text-shadow: 0 0 20px rgba(0,0,0,0.8);
+display: flex;
+align-items: center;
 }
 
- ПРАВАЯ БОЛЬШАЯ ПЛИТКА 
+/* ПРАВАЯ БОЛЬШАЯ ПЛИТКА */
 
 .right-panel {
-flex 0 0 40%;
-background rgba(0, 0, 0, 0.8);
-border-radius 25px;
-display flex;
-flex-direction column;
-justify-content center;
-align-items center;
-padding 60px 30px;
-backdrop-filter blur(20px);
-box-shadow 0 0 60px rgba(0,0,0,0.8);
+flex: 0 0 40%;
+background: rgba(0, 0, 0, 0.8);
+border-radius: 25px;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+padding: 60px 30px;
+backdrop-filter: blur(20px);
+box-shadow: 0 0 60px rgba(0,0,0,0.8);
 }
 
 .right-panel h2 {
-font-size 34px;
-letter-spacing 3px;
-margin-bottom 40px;
+font-size: 34px;
+letter-spacing: 3px;
+margin-bottom: 40px;
 }
 
- КНОПКА 
+/* КНОПКА */
 
 .connect-btn {
-padding 18px 50px;
-font-size 18px;
-border none;
-border-radius 40px;
-cursor pointer;
-background linear-gradient(45deg, #00c6ff, #0072ff);
-color white;
-font-weight bold;
-transition 0.3s;
+padding: 18px 50px;
+font-size: 18px;
+border: none;
+border-radius: 40px;
+cursor: pointer;
+background: linear-gradient(45deg, #00c6ff, #0072ff);
+color: white;
+font-weight: bold;
+transition: 0.3s;
 }
 
-.connect-btnhover {
-transform scale(1.08);
-box-shadow 0 0 30px rgba(0, 114, 255, 0.9);
+.connect-btn:hover {
+transform: scale(1.08);
+box-shadow: 0 0 30px rgba(0, 114, 255, 0.9);
 }
 
- ---------- НИЖНЕЕ ОПИСАНИЕ ---------- 
+/* ---------- НИЖНЕЕ ОПИСАНИЕ ---------- */
 
 .bottom-description {
-width 100%;
-font-size 22px;
-line-height 1.9;
-text-shadow 0 0 20px rgba(0,0,0,0.8);
-margin-top 40px;
+width: 100%;
+font-size: 22px;
+line-height: 1.9;
+text-shadow: 0 0 20px rgba(0,0,0,0.8);
+margin-top: 40px;
 }
 
- ---------- АДАПТИВ ---------- 
+/* ---------- АДАПТИВ ---------- */
 
-@media (max-width 900px) {
+@media (max-width: 900px) {
 .top-section {
-flex-direction column;
+flex-direction: column;
 }
 
 .right-panel {
-width 100%;
+width: 100%;
 }
 }
-style
-head
-body
+</style>
+</head>
+<body>
 
-div class=top-bar
-a href=#Homea
-a href=#FAQa
-a href=#Downloada
-div
+<div class="top-bar">
+<a href="#">Home</a>
+<a href="#">FAQ</a>
+<a href="#">Download</a>
+</div>
 
-div class=main-wrapper
+<div class="main-wrapper">
 
-div class=top-section
+<div class="top-section">
 
-div class=left-description
+<div class="left-description">
 Grim VPN — это инструмент для конфиденциальности, безопасности и анонимности.
 С ним вы сможете использовать интернет без ограничений на высокой скорости без лишних заморочек.
 Подключайтесь сейчас и исследуйте интернет по-новому.
-div
+</div>
 
-div class=right-panel
-h2Grim VPNh2
-button class=connect-btnПОДКЛЮЧИТЬbutton
-div
+<div class="right-panel">
+<h2>Grim VPN</h2>
+<button class="connect-btn">ПОДКЛЮЧИТЬ</button>
+</div>
 
-div
+</div>
 
-div class=bottom-description
+<div class="bottom-description">
 Это описание номер два. Grim VPN — это инструмент для конфиденциальности, безопасности и анонимности.
 С ним вы сможете использовать интернет без ограничений на высокой скорости без лишних заморочек.
 
-brbr
+<br><br>
 
 Grim VPN обеспечивает стабильное соединение, современное шифрование данных и простоту использования.
 Вы получаете быстрый доступ к любым ресурсам без ограничений, блокировок и потери скорости.
 Сервис разработан для тех, кто ценит свободу интернета и свою цифровую безопасность.
-div
+</div>
 
-div
+</div>
 
-body
-html
+</body>
+</html>
