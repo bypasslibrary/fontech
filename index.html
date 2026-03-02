@@ -8,13 +8,17 @@
 <style>
 
 /* ---------- ПОДКЛЮЧЕНИЕ КАСТОМНОГО ШРИФТА ---------- */
+/* Универсальное подключение шрифта (поддержка разных форматов) */
 @font-face {
     font-family: 'Srift';
-    src: url('srift.ttf') format('truetype');
+    src: url('srift/Srift.woff2') format('woff2'),
+         url('srift/Srift.woff') format('woff'),
+         url('srift/Srift.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
     font-display: swap;
 }
+
 
 
 @font-face {
