@@ -18,24 +18,26 @@ font-family: Arial, sans-serif;
 color: white;
 }
 
-/* ---------- ВИДЕО ФОН ---------- */
+/* ---------- ФОНОВАЯ КАРТИНКА ---------- */
 
-video {
+body {
+background: url("fon.png") no-repeat center center fixed;
+background-size: cover;
+}
+
+/* затемнение поверх картинки */
+body::before {
+content: "";
 position: fixed;
 top: 0;
 left: 0;
 width: 100%;
 height: 100%;
-object-fit: cover;
-z-index: -2;
-transition: opacity 2s linear;
+background: rgba(0, 0, 0, 0.55);
+z-index: -1;
 }
 
-#video2 {
-opacity: 0;
-}
-
-/* ---------- ТЕМНАЯ ПОЛОСА ---------- */
+/* ---------- ВЕРХНЯЯ ПАНЕЛЬ ---------- */
 
 .top-bar {
 position: fixed;
@@ -71,7 +73,7 @@ color: #00c6ff;
 position: relative;
 z-index: 1;
 max-width: 1200px;
-margin: 100px auto 60px auto;
+margin: 120px auto 60px auto;
 padding: 20px;
 }
 
@@ -80,44 +82,50 @@ padding: 20px;
 .top-section {
 display: flex;
 justify-content: space-between;
-align-items: flex-start;
-gap: 40px;
-margin-bottom: 60px;
+align-items: stretch;
+gap: 60px;
+margin-bottom: 80px;
 }
+
+/* ЛЕВАЯ ЧАСТЬ */
 
 .left-description {
 flex: 1;
-font-size: 22px;
-line-height: 1.6;
+font-size: 24px;
+line-height: 1.7;
 text-shadow: 0 0 20px rgba(0,0,0,0.8);
+display: flex;
+align-items: center;
 }
 
-/* ---------- ПРАВАЯ ПАНЕЛЬ ---------- */
+/* ПРАВАЯ БОЛЬШАЯ ПЛИТКА */
 
 .right-panel {
-width: 280px;
-background: rgba(0, 0, 0, 0.75);
-border-radius: 20px;
+flex: 0 0 40%;
+background: rgba(0, 0, 0, 0.8);
+border-radius: 25px;
 display: flex;
 flex-direction: column;
-justify-content: space-between;
+justify-content: center;
 align-items: center;
-padding: 30px 20px;
-backdrop-filter: blur(15px);
-box-shadow: 0 0 40px rgba(0,0,0,0.7);
+padding: 60px 30px;
+backdrop-filter: blur(20px);
+box-shadow: 0 0 60px rgba(0,0,0,0.8);
 }
 
 .right-panel h2 {
-font-size: 26px;
-letter-spacing: 2px;
-margin-bottom: 30px;
+font-size: 34px;
+letter-spacing: 3px;
+margin-bottom: 40px;
 }
 
+/* КНОПКА */
+
 .connect-btn {
-padding: 14px 30px;
-font-size: 16px;
+padding: 18px 50px;
+font-size: 18px;
 border: none;
-border-radius: 30px;
+border-radius: 40px;
 cursor: pointer;
 background: linear-gradient(45deg, #00c6ff, #0072ff);
 color: white;
@@ -126,17 +134,18 @@ transition: 0.3s;
 }
 
 .connect-btn:hover {
-transform: scale(1.05);
-box-shadow: 0 0 20px rgba(0, 114, 255, 0.8);
+transform: scale(1.08);
+box-shadow: 0 0 30px rgba(0, 114, 255, 0.9);
 }
 
 /* ---------- НИЖНЕЕ ОПИСАНИЕ ---------- */
 
 .bottom-description {
-font-size: 20px;
-line-height: 1.8;
+width: 100%;
+font-size: 22px;
+line-height: 1.9;
 text-shadow: 0 0 20px rgba(0,0,0,0.8);
-max-width: 900px;
+margin-top: 40px;
 }
 
 /* ---------- АДАПТИВ ---------- */
@@ -159,14 +168,6 @@ width: 100%;
 <a href="#">FAQ</a>
 <a href="#">Download</a>
 </div>
-
-<video id="video1" muted playsinline>
-<source src="fon.mp4" type="video/mp4">
-</video>
-
-<video id="video2" muted playsinline>
-<source src="fon.mp4" type="video/mp4">
-</video>
 
 <div class="main-wrapper">
 
@@ -197,3 +198,6 @@ Grim VPN обеспечивает стабильное соединение, с�
 </div>
 
 </div>
+
+</body>
+</html>
